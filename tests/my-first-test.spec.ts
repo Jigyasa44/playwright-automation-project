@@ -64,3 +64,27 @@ await checkoutPage.finishOrder();
 
 await checkoutPage.verifyOrderConfirmation();
 });
+test('user cannot checkout without required information', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  const productsPage = new ProductsPage(page);
+  const cartPage = new CartPage(page);
+  const checkoutPage = new CheckoutPage(page);
+
+  await loginPage.login(
+    loginData.validUser.username,
+    loginData.validUser.password
+  );
+
+  await productsPage.addBackpackToCart();
+  await productsPage.openCart();
+
+  await cartPage.verifyProductInCart('Sauce Labs Backpack');
+
+  await checkoutPage.startCheckout();
+
+  await checkoutPage.continueToOverview();
+
+  await expect(
+    page.getByText('Error: First Name is required')
+  ).toBeVisible();
+});
