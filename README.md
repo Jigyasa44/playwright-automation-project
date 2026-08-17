@@ -1,72 +1,41 @@
-\# Playwright Automation Project
+# Playwright Automation Project
 
+## Overview
 
+This project is a sample UI automation framework built using Playwright and TypeScript.
 
-A sample end-to-end test automation project built using \*\*Playwright\*\* and \*\*TypeScript\*\*.
+The project demonstrates automated testing of a web application using the Page Object Model (POM) design pattern.
 
+## Tech Stack
 
+- Playwright
+- TypeScript
+- Node.js
+- Git
+- GitHub
+- GitHub Actions
 
-\## 🚀 Tech Stack
-
-
-
-\- Playwright
-
-\- TypeScript
-
-\- Node.js
-
-\- Git \& GitHub
-
-\- GitHub Actions
-
-
-
-\## 📁 Project Structure
-
-
+## Project Structure
 
 ```text
-
 playwright-automation-project/
-
 │
-
 ├── pages/
-
-│   ├── CartPage.ts
-
-│   ├── CheckoutPage.ts
-
 │   ├── LoginPage.ts
-
-│   └── ProductsPage.ts
-
+│   ├── ProductsPage.ts
+│   ├── CartPage.ts
+│   └── CheckoutPage.ts
 │
-
 ├── tests/
-
 │   └── my-first-test.spec.ts
-
 │
-
 ├── test-data/
-
 │   └── loginData.ts
-
 │
-
 ├── .github/
-
 │   └── workflows/
-
 │       └── playwright.yml
-
 │
-
 ├── playwright.config.ts
-
 ├── package.json
-
-└── .gitignore
-
+└── README.md
