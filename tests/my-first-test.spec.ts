@@ -88,3 +88,17 @@ test('user cannot checkout without required information', async ({ page }) => {
     page.getByText('Error: First Name is required')
   ).toBeVisible();
 });
+test('user cannot login with invalid credentials', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+
+  await page.goto('https://www.saucedemo.com/');
+
+  await loginPage.login(
+    'invalid_user',
+    'wrong_password'
+  );
+
+  await expect(
+    page.getByText('Epic sadface: Username and password do not match any user in this service')
+  ).toBeVisible();
+});
