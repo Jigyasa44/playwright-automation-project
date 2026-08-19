@@ -17,3 +17,8 @@ export const invalidLoginData = [
     password: 'secret_sauce',
   },
 ];
+export const checkoutData = {
+  firstName: 'Jigyasa',
+  lastName: 'Sharma',
+  postalCode: '110001',
+};
