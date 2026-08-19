@@ -3,7 +3,7 @@ import { CartPage } from '../pages/CartPage';
 import { ProductsPage } from '../pages/ProductsPage';
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
-import { loginData, invalidLoginData } from '../test-data/loginData';
+import { loginData, invalidLoginData,  checkoutData } from '../test-data/loginData';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('https://www.saucedemo.com/');
@@ -54,9 +54,9 @@ test('user can add a product to the cart', async ({ page }) => {
 
   await checkoutPage.startCheckout();
 await checkoutPage.enterCustomerInformation(
-  'Jigyasa',
-  'Sharma',
-  '110001'
+  checkoutData.firstName,
+  checkoutData.lastName,
+  checkoutData.postalCode
 );
 await checkoutPage.continueToOverview();
 
